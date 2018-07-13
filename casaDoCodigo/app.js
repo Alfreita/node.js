@@ -1,9 +1,6 @@
 
 var app = require('./config/express')();
-
-app.get('/produtos',function(req,res){
-    res.render("produtos/lista");
-});
+var rotasDosProdutos = require('./app/routes/produtos')(app);
 
 app.listen(3000,function(){
     console.log("seridor rodando");
