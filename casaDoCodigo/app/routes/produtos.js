@@ -6,7 +6,7 @@ app.get('/produtos',function(req,res){
         host:'localhost',
         user:'root',
         password:'',
-        database:'casadocodigo_nodejs'
+        database:'node'
     });
     connection.query('select * from livros',function(err,results){
         res.send(results);
