@@ -9,7 +9,7 @@ app.get('/produtos',function(req,res){
         database:'node'
     });
     connection.query('select * from livro',function(err,results){
-    res.send(results);
+    res.render('produtos/lista',{lista:reslts});
     });
     connection.end();
     
