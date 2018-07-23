@@ -11,5 +11,7 @@ module.exports = function(app){
       connection.end();
 
   });
-  
+    app.get('produtos/remove',function(){
+        produtosBanco.carrega(connection,id,callback);
+    });
 }
