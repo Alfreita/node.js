@@ -3,15 +3,13 @@ module.exports = function(app){
   app.get('/produtos',function(req,res){
 
       var connection = app.infra.ConnectionFactory();
-      var produtosBanco = app.infra.produtosBanco;
-      produtosBanco.lista(connection,function(err,results){
+      var produtosBanco = new app.infra.produtosDAO(connection);
+      produtosBanco.lista(function(err,results){
           res.render('produtos/lista', {lista:results});
       });
 
       connection.end();
 
   });
-    app.get('produtos/remove',function(){
-        produtosBanco.carrega(connection,id,callback);
-    });
+    
 }
